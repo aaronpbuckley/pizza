@@ -39,7 +39,8 @@ int main(int argc, const char * argv[])
             NSArray *pizzaToppings = [commandWords subarrayWithRange:range];
             
             // And then send some message to the kitchen...
-            
+            Pizza* newPizza = [restaurantKitchen makePizzaWithSize:size toppings:pizzaToppings];
+            NSLog(@"%@", newPizza);
         }
 
     }

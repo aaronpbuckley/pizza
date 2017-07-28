@@ -21,9 +21,27 @@
         else if ([size compare:@"large"] || [size compare:@"Large"]){
             _size = large;
         }
-        _pizzaToppings = [NSArray pizzaToppings: @"pineapple", @"spinach", "olives", "peppers", "mushrooms"];
+        _pizzaToppings = pizzaToppings;
     }
     return self;
+}
+
+-(NSString *) sizeString {
+    switch(self.size) {
+        case small:
+            return @"small";
+        case medium:
+            return @"medium";
+        case large:
+            return @"large";
+        default:
+            return @"unknown";
+    }
+}
+
+-(NSString *)description{
+    NSString *pizzaDescription = [NSString stringWithFormat:@"Size: %@ Toppings %@", [self sizeString], [self pizzaToppings] ];
+    return pizzaDescription;
 }
 
 //- (NSArray *)pizzaSize{
